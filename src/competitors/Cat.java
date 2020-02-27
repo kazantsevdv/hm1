@@ -20,7 +20,7 @@ public class Cat implements Competitor {
 
     @Override
     public void run(int dist) {
-        if (dist <= maxRunDistance && active) {
+        if (active && dist <= maxRunDistance) {
             System.out.println("Кот " + name + " справился с бегом");
         } else {
             System.out.println("Кот " + name + " провалил бег");
@@ -30,7 +30,7 @@ public class Cat implements Competitor {
 
     @Override
     public void jump(int height) {
-        if (height <= maxJumpHeight && active) {
+        if (active && height <= maxJumpHeight) {
             System.out.println("Кот " + name + " справился с прыжком");
         } else {
             System.out.println("Кот " + name + " не смог допрыгнуть");
@@ -45,6 +45,7 @@ public class Cat implements Competitor {
 
     @Override
     public void info() {
-        System.out.println("Кот " + name + " " + active);
+        String rez = active ? "Прошел полосу" : "Не справился";
+        System.out.println("Кот " + name + " " + rez);
     }
 }

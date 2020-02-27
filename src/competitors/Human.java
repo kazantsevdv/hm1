@@ -19,7 +19,7 @@ public class Human implements Competitor {
 
     @Override
     public void run(int dist) {
-        if (dist <= maxRunDistance && active) {
+        if (active && dist <= maxRunDistance) {
             System.out.println("Черовек " + name + " справился с бегом");
         } else {
             System.out.println("Черовек " + name + " провалил бег");
@@ -29,7 +29,7 @@ public class Human implements Competitor {
 
     @Override
     public void jump(int height) {
-        if (height <= maxJumpHeight && active) {
+        if (active && height <= maxJumpHeight) {
             System.out.println("Черовек " + name + " справился с прыжком");
         } else {
             System.out.println("Черовек " + name + " не смог допрыгнуть");
@@ -44,6 +44,7 @@ public class Human implements Competitor {
 
     @Override
     public void info() {
-        System.out.println("Черовек " + name + " " + active);
+        String rez = active ? "Прошел полосу" : "Не справился";
+        System.out.println("Черовек " + name + " " + rez);
     }
 }

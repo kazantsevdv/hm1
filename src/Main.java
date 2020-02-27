@@ -28,6 +28,8 @@ public class Main {
             }
         }
 
+        System.out.println();
+
         for (Competitor c : competitors) {
             c.info();
         }
